@@ -4,15 +4,24 @@ spree-frontend-integration is a JavaScript library which allows easy access to S
 
 ## Dependency
 
-You need to add [Spree AMS](https://github.com/vinsol/spree_ams) To your Gemfile
+You need to install [Spree AMS](https://github.com/vinsol/spree_ams) gem.
 
 ## Configurations
 
 **[Spree Frontend Integration](https://github.com/vinsol-spree-contrib/spree-themes-integration)** Provides a number of configurations which allow you to customize the integration according to your needs.
 
+To access all endpoints add below line of code in your routes.rb.
+
+```
+namespace :api do
+  match '*path' => 'ams/cors#preflight_check', via: [:options]
+end
+```
+
 | Option | Description | Example
 | --- | --- | --- |
 | domain | In case your your backend & frontend are on different servers you will need to use this option & pass your backend domain to the integration when invoking the class. | (new SpreeApi.productsList('www.vinsol.com'))
+| callback | To handle the response returned from the API, you need to pass a callback method, which will be invoked after successfull API call | (new SpreeApi.productsList('www.vinsol.com')).sendRequest({cb: myCallback}) |
 | path | If you don't want to use default path(relative URL to the backend domain) for any of the API call you can overide this option. | (new SpreeApi.productsList('www.vinsol.com')).sendRequest({path: '/api/xx/products' }) |
 | method | If you don't want to use default method. HTTP method to be used when hitting the API endpoint. | (new SpreeApi.productsList('www.vinsol.com')).sendRequest({method: 'GET' }) |
 
@@ -130,6 +139,7 @@ This method should be used for checkout steps, with valid & complete information
 
 ```
 (SpreeApi.checkoutOrder()).sendRequest({params: {
+  id: 1,
   bill_address_attributes: {...},
   ship_address_attributes: {...},
   payments_attributes: {...},
@@ -158,7 +168,7 @@ This method returns the current order in progress of the loggedIn user.
 This method removes all the line items from the current order.
 
 ```
-(SpreeApi.emptyOrder()).sendRequest({})
+(SpreeApi.emptyOrder()).sendRequest({params: {id: 1}})
 ```
 
 ### SpreeApi.deleteOrder*
@@ -166,7 +176,7 @@ This method removes all the line items from the current order.
 This method deletes the current order.
 
 ```
-(SpreeApi.deleteOrder()).sendRequest({})
+(SpreeApi.deleteOrder()).sendRequest({params: {id: 1}})
 ```
 
 *= Login Required
