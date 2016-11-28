@@ -1,0 +1,17 @@
+{
+  "name": "spree-frontend-integration",
+  "authors": [
+    "Sawan Gupta <sawan.gupta92@gmail.com>"
+  ],
+  "description": "API",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/vinsol-spree-contrib/spree-themes-integration",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
