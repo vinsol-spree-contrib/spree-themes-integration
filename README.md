@@ -6,9 +6,6 @@ spree-frontend-integration is a JavaScript library which allows easy access to S
 
 You need to install [Spree AMS](https://github.com/vinsol/spree_ams) gem.
 
-## Configurations
-
-**[Spree Frontend Integration](https://github.com/vinsol-spree-contrib/spree-themes-integration)** Provides a number of configurations which allow you to customize the integration according to your needs.
 
 To access all endpoints add below line of code in your routes.rb.
 
@@ -17,6 +14,23 @@ namespace :api do
   match '*path' => 'ams/cors#preflight_check', via: [:options]
 end
 ```
+
+## Installation
+
+Node:
+```
+npm install --save spree-themes-integration
+```
+
+Bower:
+```
+bower install spree-themes-integration
+```
+You may need to use [browserify](http://browserify.org/) to properly install the package in case of bower. You can take the help of the following [tutorial](https://egghead.io/lessons/javascript-gulp-and-browserify-initial-setup)
+
+## Configurations
+
+**[Spree Frontend Integration](https://github.com/vinsol-spree-contrib/spree-themes-integration)** Provides a number of configurations which allow you to customize the integration according to your needs.
 
 | Option | Description | Example
 | --- | --- | --- |
