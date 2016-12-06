@@ -95,11 +95,12 @@ var SpreeApi = function () {
           return this.responseText;
         } else if (this.readyState == 4 && this.status == 500) {
           console.log('Oops something went wrong!');
+        } else if (this.readyState == 4 && (this.status >= 400 || this.status < 500)) {
+          console.log('Errors present');
         }
       };
       xhttp.open(method, url + '?' + params, true);
       xhttp.setRequestHeader('X-Spree-Token', this.userID(params));
-      xhttp.withCredentials = true;
       xhttp.send(params);
     }
   }]);
