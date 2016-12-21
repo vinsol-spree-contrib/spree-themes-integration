@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateOrder = exports.taxonsList = exports.taxonomyList = exports.statesList = exports.signUp = exports.profile = exports.productShow = exports.productsList = exports.optionTypesList = exports.myOrders = exports.login = exports.emptyOrder = exports.deleteOrder = exports.currentOrder = exports.createOrder = exports.countryLists = exports.addressShow = exports.checkoutOrder = exports.SpreeApi = undefined;
+exports.productsTaxonList = exports.updateOrder = exports.taxonsList = exports.taxonomyList = exports.statesList = exports.signUp = exports.profile = exports.productShow = exports.productsList = exports.optionTypesList = exports.myOrders = exports.login = exports.emptyOrder = exports.deleteOrder = exports.currentOrder = exports.createOrder = exports.countryLists = exports.addressShow = exports.checkoutOrder = exports.SpreeApi = undefined;
 
 var _spreeApi = require('./spreeApi');
 
@@ -81,6 +81,10 @@ var _updateOrder = require('./api/updateOrder');
 
 var _updateOrder2 = _interopRequireDefault(_updateOrder);
 
+var _productsTaxonList = require('./api/productsTaxonList');
+
+var _productsTaxonList2 = _interopRequireDefault(_productsTaxonList);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.SpreeApi = _spreeApi2.default;
@@ -102,3 +106,4 @@ exports.statesList = _statesList2.default;
 exports.taxonomyList = _taxonomyList2.default;
 exports.taxonsList = _taxonsList2.default;
 exports.updateOrder = _updateOrder2.default;
+exports.productsTaxonList = _productsTaxonList2.default;
