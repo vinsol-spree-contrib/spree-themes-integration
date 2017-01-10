@@ -45,7 +45,7 @@ You may need to use [browserify](http://browserify.org/) to properly install the
 Use this method to login into Spree Backend. This methods needs to essential parameters ```email``` & ```password``` to successfully login. It actually saves token returned by Spree API to the cookie in encrypted form.
 
 ```
-(SpreeApi.login()).sendRequest({params: {
+(new SpreeApi.login()).sendRequest({params: {
   users: {
     email: 'spree@vinsol.com',
     password: 'spree123'
@@ -58,7 +58,7 @@ Use this method to login into Spree Backend. This methods needs to essential par
 Use this method to signUp into Spree Backend. This methods needs to essential parameters ```email``` & ```password``` to successfully create a new user.
 
 ```
-(SpreeApi.signUp()).sendRequest({params: {
+(new SpreeApi.signUp()).sendRequest({params: {
   users: {
     email: 'spree@vinsol.com',
     password: 'spree123'
@@ -71,7 +71,7 @@ Use this method to signUp into Spree Backend. This methods needs to essential pa
 Use this method to get user details from Spree Backend.
 
 ```
-(SpreeApi.profile()).sendRequest({})
+(new SpreeApi.profile()).sendRequest({})
 ```
 
 ### SpreeApi.productsList
@@ -79,14 +79,14 @@ Use this method to get user details from Spree Backend.
 Use this method to get a list of products from Spree Backend.
 
 ```
-(SpreeApi.productsList()).sendRequest({params:{ per_page: 25, page: 1}})
+(new SpreeApi.productsList()).sendRequest({params:{ per_page: 25, page: 1}})
 ```
 
 ### SpreeApi.productShow
 
 Use this method to get details of a specific product from Spree Backend.
 ```
-(SpreeApi.productShow()).sendRequest({params:{ id: 1 }})
+(new SpreeApi.productShow()).sendRequest({params:{ id: 1 }})
 Note: here id is product id/slug.
 ```
 
@@ -95,7 +95,7 @@ Note: here id is product id/slug.
 Use this method to get the taxon list from Spree Backend.
 
 ```
-(SpreeApi.taxonsList()).sendRequest({})
+(new SpreeApi.taxonsList()).sendRequest({})
 ```
 
 ### SpreeApi.taxonomyList
@@ -103,7 +103,7 @@ Use this method to get the taxon list from Spree Backend.
 Use this method to get the taxonomy & taxons list from Spree Backend.
 
 ```
-(SpreeApi.taxonomyList()).sendRequest({})
+(new SpreeApi.taxonomyList()).sendRequest({})
 ```
 
 ### SpreeApi.countryLists
@@ -111,7 +111,7 @@ Use this method to get the taxonomy & taxons list from Spree Backend.
 Use this method to get a list of countries from Spree Backend.
 
 ```
-(SpreeApi.countryLists()).sendRequest({})
+(new SpreeApi.countryLists()).sendRequest({})
 ```
 
 ### SpreeApi.statesList
@@ -119,7 +119,7 @@ Use this method to get a list of countries from Spree Backend.
 Use this method to get a list of states for a specific country from Spree Backend.
 
 ```
-(SpreeApi.statesList()).sendRequest({params: { id: 1 }})
+(new SpreeApi.statesList()).sendRequest({params: { id: 1 }})
 Note: here id is country_id
 ```
 
@@ -128,7 +128,7 @@ Note: here id is country_id
 Use this method to get a list of option types from Spree Backend.
 
 ```
-(SpreeApi.optionTypesList()).sendRequest({})
+(new SpreeApi.optionTypesList()).sendRequest({})
 ```
 
 ### SpreeApi.createOrder*
@@ -136,7 +136,7 @@ Use this method to get a list of option types from Spree Backend.
 This method is to create a new order at Spree Backend and returns order response.
 
 ```
-(SpreeApi.createOrder()).sendRequest({})
+(new SpreeApi.createOrder()).sendRequest({})
 ```
 
 ### SpreeApi.updateOrder*
@@ -144,7 +144,7 @@ This method is to create a new order at Spree Backend and returns order response
 This method is to update(Add a line item) a prevously created order at Spree Backend and returns order response.
 
 ```
-(SpreeApi.updateOrder()).sendRequest({})
+(new SpreeApi.updateOrder()).sendRequest({})
 ```
 
 ### SpreeApi.checkoutOrder*
@@ -152,7 +152,7 @@ This method is to update(Add a line item) a prevously created order at Spree Bac
 This method should be used for checkout steps, with valid & complete information the order will be automatically proceeded to the next step. It returns the order response.
 
 ```
-(SpreeApi.checkoutOrder()).sendRequest({params: {
+(new SpreeApi.checkoutOrder()).sendRequest({params: {
   id: 1,
   bill_address_attributes: {...},
   ship_address_attributes: {...},
@@ -166,7 +166,7 @@ This method should be used for checkout steps, with valid & complete information
 This method returns all completed orders of the loggedIn user.
 
 ```
-(SpreeApi.myOrders()).sendRequest({})
+(new SpreeApi.myOrders()).sendRequest({})
 ```
 
 ### SpreeApi.currentOrder*
@@ -174,7 +174,7 @@ This method returns all completed orders of the loggedIn user.
 This method returns the current order in progress of the loggedIn user.
 
 ```
-(SpreeApi.currentOrder()).sendRequest({})
+(new SpreeApi.currentOrder()).sendRequest({})
 ```
 
 ### SpreeApi.emptyOrder*
@@ -182,7 +182,7 @@ This method returns the current order in progress of the loggedIn user.
 This method removes all the line items from the current order.
 
 ```
-(SpreeApi.emptyOrder()).sendRequest({params: {id: 1}})
+(new SpreeApi.emptyOrder()).sendRequest({params: {id: 1}})
 ```
 
 ### SpreeApi.deleteOrder*
@@ -190,7 +190,7 @@ This method removes all the line items from the current order.
 This method deletes the current order.
 
 ```
-(SpreeApi.deleteOrder()).sendRequest({params: {id: 1}})
+(new SpreeApi.deleteOrder()).sendRequest({params: {id: 1}})
 ```
 
 *= Login Required
