@@ -1,6 +1,6 @@
 {
   "name": "spree-frontend-integration",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a JS API to integrate with spree",
   "homepage": "https://github.com/vinsol-spree-contrib/spree-themes-integration",
   "author": {
@@ -46,7 +46,7 @@
       "mocha": true
     }
   },
-  "repository": "https://github.com/vinsol-spree-contrib/spree-themes-integration/tree/spree-api",
+  "repository": "https://github.com/vinsol-spree-contrib/spree-themes-integration",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
